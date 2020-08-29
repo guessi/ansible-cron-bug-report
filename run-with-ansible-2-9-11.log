@@ -1,0 +1,41 @@
+% rm /tmp/demo-cronfile # remove target output file before test
+
+
+% pip install ansible==2.9.11
+
+
+% ansible --version
+
+ansible 2.9.11
+
+
+% ansible-playbook --connection=local --inventory localhost, playbook.yml
+
+PLAY [localhost] *******************************************************************************************************************************************************************************************
+
+TASK [Gathering Facts] *************************************************************************************************************************************************************************************
+[WARNING]: Platform darwin on host localhost is using the discovered Python interpreter at /usr/bin/python, but future installation of another Python interpreter could change this. See
+https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information.
+ok: [localhost]
+
+TASK [demo task 1] *****************************************************************************************************************************************************************************************
+changed: [localhost]
+
+TASK [demo task 2] *****************************************************************************************************************************************************************************************
+changed: [localhost]
+
+TASK [demo task 3] *****************************************************************************************************************************************************************************************
+changed: [localhost]
+
+PLAY RECAP *************************************************************************************************************************************************************************************************
+localhost                  : ok=4    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+
+
+% cat /tmp/demo-cronfile
+
+#Ansible: demo task 3
+* * * * * root echo task 3
+#Ansible: demo task 1
+* * * * * root echo task 1
+#Ansible: demo task 2
+* * * * * root echo task 2

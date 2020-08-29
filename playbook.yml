@@ -1,0 +1,26 @@
+- hosts: localhost
+  connection: local
+  tasks:
+  - name: demo task 1
+    cron:
+      name: "demo task 1"
+      cron_file: "/tmp/demo-cronfile"
+      job: "echo task 1"
+      user: "root"
+      state: "present"
+
+  - name: demo task 2
+    cron:
+      name: "demo task 2"
+      cron_file: "/tmp/demo-cronfile"
+      job: "echo task 2"
+      user: "root"
+      state: "present"
+
+  - name: demo task 3
+    cron:
+      name: "demo task 3"
+      cron_file: "/tmp/demo-cronfile"
+      job: "echo task 3"
+      user: "root"
+      state: "present"
