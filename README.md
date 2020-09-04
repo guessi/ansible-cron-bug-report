@@ -1,5 +1,8 @@
 # Ansible "Cron" module bug report
 
+***Update:***
+It is now fixed and released with 2.9.13, reference: https://github.com/ansible/ansible/pull/71207
+
 **Expected Result: (run with 2.9.11)**
 - should have 3 cron tasks being defined in target output file
 
